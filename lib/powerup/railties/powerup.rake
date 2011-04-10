@@ -11,8 +11,8 @@ end
 namespace :pow do
   task :check_for_pow do
     unless File.exists?(POW_PATH)
-      puts "error: pow not found!"
-      puts "install with 'curl get.pow.cx | sh'"
+      puts "error: '#{POW_PATH}' not found!"
+      puts "install pow with 'curl get.pow.cx | sh'"
 
       exit(false)
     end
@@ -20,7 +20,7 @@ namespace :pow do
   
   desc "Add application to pow"
   task :add => :check_for_pow do
-    puts "Add '#{APP_NAME}' to pow ..."
+    puts "Add '#{APP_NAME}' to pow"
     exec_with_explain "ln -s #{APP_PATH} #{POW_PATH}"
   end
   
@@ -38,7 +38,7 @@ namespace :pow do
   
   desc "Open application in browser"
   task :open => :check_for_pow do
-    puts "Open'#{APP_NAME}' in browser ..."
+    puts "Open '#{APP_NAME}'"
     exec_with_explain "open http://#{APP_NAME}.dev"
   end
 end
