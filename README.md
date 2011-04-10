@@ -15,6 +15,8 @@ run `rake pow:remove` to remove your application from pow
 
 run `rake pow:restart` to restart your application
 
+rub `rake pow:open` to open your application in a browser
+
 Copyright
 ---------
 Copyright (c) 2011 Jan-Oliver Jahner See LICENSE for further details.
