@@ -18,27 +18,27 @@ namespace :pow do
     end
   end
   
-  desc "Add app to pow"
+  desc "Add application to pow"
   task :add => :check_for_pow do
-    puts "Adding #{APP_NAME} to pow"
+    puts "Add '#{APP_NAME}' to pow ..."
     exec_with_explain "ln -s #{APP_PATH} #{POW_PATH}"
   end
   
-  desc "Remove app from pow"
+  desc "Remove application from pow"
   task :remove => :check_for_pow do
-    puts "Removing #{APP_NAME} from pow"
+    puts "Remove '#{APP_NAME}' from pow"
     exec_with_explain "rm #{File.join(POW_PATH, APP_NAME)}"
   end
   
-  desc "Restart app"
+  desc "Restart application"
   task :restart => :check_for_pow do
-    puts "Restarting ..."
+    puts "Restart '#{APP_NAME}'"
     exec_with_explain "touch #{File.join(APP_PATH, "tmp")}/restart.txt"
   end
   
-  desc  "Open app in browser"
+  desc "Open application in browser"
   task :open => :check_for_pow do
-    puts "Starting browser ..."
+    puts "Open'#{APP_NAME}' in browser ..."
     exec_with_explain "open http://#{APP_NAME}.dev"
   end
 end
